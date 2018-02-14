@@ -1,0 +1,54 @@
+.testimonial {
+    padding-left: 0;
+    padding-right: 0;
+    background-image: url("../images/testimonial-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 30rem;
+    padding-bottom: 0;
+    @include atSmall {
+        padding-top: 0;
+    }
+    &__copy {
+        background-color: $black;
+        position: relative;
+        padding: 4rem 30px 10rem 30px;
+        @include atSmall {
+            padding-top: 10rem;
+            padding-bottom: 12rem;
+            padding-left: 5rem;
+            padding-right: 15px;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 50vw;
+            background-color: $black;
+            transform: translateX(90%);
+        }
+        &-content {
+            position: relative;
+            z-index: 2;
+        }
+        &-text {
+            color: $text-white;
+            font-size: 1.75rem;
+            line-height: 2.9167rem;
+            font-family: $main-reg;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+            margin: 1.667rem 0;
+            @include atSmall {
+                font-size: 1.3125rem;
+                line-height: 2.8175rem;
+                margin: 1.25rem 0;
+            }
+        }
+    }
+}

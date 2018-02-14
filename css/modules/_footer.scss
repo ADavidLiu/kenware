@@ -1,0 +1,46 @@
+.footer {
+    padding: 4.167rem 15px;
+    @include atSmall {
+        padding: 3.125rem 15px;
+    }
+    &__column {
+        & + & {
+            margin-top: 3rem;
+            @include atSmall {
+                margin-top: 0;
+            }
+        }
+    }
+    &__text {
+        font-family: $alt;
+        font-weight: 300;
+        font-size: 0.9167rem;
+        line-height: 1.5rem;
+        color: $text-light;
+        @include atSmall {
+            font-size: 0.6875rem;
+            line-height: 1.125rem;
+        }
+        &--link {
+            @include linkStates($text-light, none);
+            &-break {
+                word-break: break-all;
+            }
+        }
+        &--title {
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            color: $brand;
+            @include atSmall {
+                margin-bottom: 1.875rem;
+            }
+        }
+    }
+    &__logo {
+        width: 50%;
+        height: auto;
+        @include atSmall {
+            width: 100%;
+        }
+    }
+}

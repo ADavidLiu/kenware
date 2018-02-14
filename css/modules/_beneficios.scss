@@ -1,0 +1,39 @@
+.beneficios {
+    background-color: $gray;
+    &__list {
+        @include atSmall {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+    &__item {
+        text-align: center;
+        @include atSmall {
+            width: 25%;
+        }
+        & + & {
+            margin-top: 1.667rem;
+            @include atSmall {
+                margin-top: 0;
+                margin-left: 1.25rem;
+            }
+        }
+        &-img {
+            text-align: center;
+            @include atSmall {
+                width: 100%;
+            }
+        }
+        &-label {
+            margin-top: 1.667rem;
+            font-family: $main-lgt;
+            color: $brand;
+            font-size: 1.333rem;
+            @include atSmall {
+                margin-top: 1.25rem;
+                font-size: 1rem;
+            }
+        }
+    }
+}

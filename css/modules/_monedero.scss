@@ -1,0 +1,132 @@
+.monedero {
+    &__accesible {
+        @include atSmall {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        &-item {
+            text-align: center;
+            position: relative;
+            @include atSmall {
+                width: 33.33%;
+            }
+            & + & {
+                margin-top: 5rem;
+                @include atSmall {
+                    margin-top: 0;
+                }
+                &:before {
+                    content: "";
+                    height: 7px;
+                    width: 60px;
+                    background-image: url("../images/divider.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    position: absolute;
+                    top: -3rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    @include atSmall {
+                        top: 25%;
+                        left: 0;
+                        transform: translateY(-25%) translateX(-50%);
+                    }
+                }
+            }
+            &__img {
+                margin-bottom: 2.5rem;
+                @include atSmall {
+                    margin-bottom: 1.875rem;
+                    height: 5.9375rem;
+                    width: auto;
+                    max-width: 100%;
+                }
+            }
+            &__text {
+                color: $text;
+                font-size: 1.25rem;
+                font-family: $main-lgt;
+                width: 70%;
+                margin: 0 auto;
+                @include atSmall {
+                    font-size: 0.9375rem;
+                    width: 50%;
+                }
+            }
+        }
+    }
+    &__beneficios {
+        margin-top: 1.667rem;
+        @include atSmall {
+            margin-top: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &-img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto 2rem auto;
+            @include atSmall {
+                margin: 0;
+            }
+        }
+        &-list {
+            &__item{
+                text-align: center;
+                @include atSmall {
+                    text-align: left;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+                & + & {
+                    margin-top: 3.333rem;
+                    @include atSmall {
+                        margin-top: 2.5rem;
+                    }
+                }
+                &-icon-wrapper {
+                    height: 5rem;
+                    width: 5rem;
+                    border-radius: 50%;
+                    border: 4px dotted $brand;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 1.667rem;
+                    margin: 0 auto 1rem auto;
+                    position: relative;
+                    @include atSmall {
+                        max-height: 4rem;
+                        max-width: 4rem;
+                        margin-right: 1.25rem;
+                        margin: 0 1.25rem 0 0;
+                    }
+                }
+                &-icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                &-text {
+                    font-family: $main-lgt;
+                    color: $black;
+                    font-size: 1.5rem;
+                    line-height: 2.0833rem;
+                    width: 70%;
+                    margin: 0 auto;
+                    @include atSmall {
+                        font-size: 1.125rem;
+                        line-height: 1.5625rem;
+                        margin: 0;
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}

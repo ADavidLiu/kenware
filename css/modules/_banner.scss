@@ -1,0 +1,41 @@
+.banner {
+    padding-bottom: 12.1875rem;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    &__title {
+        margin-bottom: 2.08333rem;
+        font-family: $main-reg;
+        color: $black;
+        font-size: 2.5rem;
+        line-height: 2.9167rem;
+        @include atSmall {
+            margin-bottom: 1.5625rem;
+            font-size: 1.875rem;
+            line-height: 2.1875rem;
+        }
+    }
+    &__copy {
+        padding: 0;
+    }
+    &__btns {
+        @include atSmall {
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+        }
+        .cta {
+            display: block;
+            & + .cta {
+                margin-top: 1.667rem;
+                @include atSmall {
+                    margin-top: 0;
+                    margin-left: 1.25rem;
+                }
+            }
+            @include atSmall {
+                display: inline-block;
+            }
+        }
+    }
+}

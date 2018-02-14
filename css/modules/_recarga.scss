@@ -1,0 +1,158 @@
+.recarga {
+    &__beneficios {
+        @include atSmall {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+        }
+        &-list {
+            margin-bottom: 2.5rem;
+            @include atSmall {
+                margin-bottom: 0;
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: stretch;
+            }
+            &__item {
+                width: 100%;
+                & + & {
+                    margin-top: 2.5rem;
+                    @include atSmall {
+                        margin-top: 1.875rem;
+                    }
+                }
+            }
+        }
+    }
+    &__operadoras {
+        @include atSmall {
+            margin-left: 1.875rem;
+            width: 50%;
+        }
+        &-group {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            & + & {
+                margin-top: 2.5rem;
+                @include atSmall {
+                    margin-top: 1.875rem;
+                }
+            }
+        }
+        &-item-wrapper {
+            width: 50%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & + & {
+                margin-left: 2.5rem;
+                @include atSmall {
+                    margin-left: 1.875rem;
+                }
+            }
+        }
+        &-item {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    &__servicios {
+        margin-top: 7.5rem;
+        @include atSmall {
+            margin-top: 5.625rem;
+        }
+        &-item {
+            @include atSmall {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            &:first-of-type {
+                padding-top: 1.333rem;
+                @include atSmall {
+                    padding-top: 1rem;
+                }
+            }
+            & + & {
+                margin-top: 3.333rem;
+                @include atSmall {
+                    margin-top: 2.5rem;
+                }
+            }
+            &__copy {
+                @include atSmall {
+                    flex-grow: 1;
+                    margin-left: 2.5rem;
+                }
+            }
+            &__icon {
+                margin-bottom: 1.5rem;
+                @include atSmall {
+                    margin-bottom: 0;
+                }
+            }
+            &__title {
+                font-family: $main-smb;
+                text-transform: uppercase;
+                color: $brand;
+                font-size: 1.667rem;
+                line-height: 2.0833rem;
+                margin-bottom: 1rem;
+                @include atSmall {
+                    font-size: 1.25rem;
+                    line-height: 1.5625rem;
+                    margin-bottom: 0.75rem;
+                }
+            }
+            &__text {
+                font-family: $main-lgt;
+                font-size: 1.25rem;
+                line-height: 1.667rem;
+                color: $text;
+                @include atSmall {
+                    font-size: 0.9375rem;
+                    line-height: 1.25rem;
+                }
+            }
+        }
+    }
+    &__servicios-logos {
+        text-align: center;
+        &-group {
+            @include atSmall {
+                display: flex;
+                align-items: stretch;
+                justify-content: space-between;
+            }
+            & + & {
+                margin-top: 2.5rem;
+                @include atSmall {
+                    margin-top: 1.875rem;
+                }
+            }
+            &:last-of-type {
+                justify-content: center;
+            }
+        }
+        &-item {
+            text-align: center;
+            @include atSmall {
+                width: 33.33%;
+            }
+            & + &  {
+                margin-top: 2.5rem;
+                @include atSmall {
+                    margin-top: 0;
+                }
+            }
+            &__img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

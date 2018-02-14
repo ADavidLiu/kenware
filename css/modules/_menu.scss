@@ -1,0 +1,92 @@
+.menu {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10rem 15px;
+    text-align: right;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .25s;
+    @include atSmall {
+        padding: 6rem 15px;
+    }
+    &--active {
+        opacity: 1;
+        pointer-events: all;
+    }
+    &__close {
+        cursor: pointer;
+        margin-bottom: 5rem;
+    }
+    &__nav {
+        opacity: 0;
+        transform: translateX(-5%);
+        transition: all .25s;
+        @include atSmall {
+            width: 50%;
+        }
+        &--active {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    &__list {
+        text-align: left;
+        &-item {
+            padding: 10px 10px 10px 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            @include atSmall {
+                padding-left: 1.875rem;
+            }
+            &--active {
+                position: relative;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 10px;
+                    left: 1.25rem;
+                    transform: translate(-50%, 100%);
+                    border-radius: 50%;
+                    background-color: $brand;
+                    height: 8px;
+                    width: 8px;
+                    @include atSmall {
+                        left: 0.9375rem;
+                    }
+                }
+            }
+            &>.menu__list {
+                display: none;
+                .menu__list {
+                    &-item {
+                        border-bottom: 0;
+                        padding: 10px 0 10px 2.5rem;
+                        @include atSmall {
+                            padding-left: 1.875rem;
+                        }
+                    }
+                    &-link {
+                        @include linkStates($text-gray, none);
+                    }
+                }
+            }
+        }
+        &-link {
+            font-family: $main-lgt;
+            font-size: 1.667rem;
+            display: block;
+            @include linkStates($white, none);
+            @include atSmall {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}

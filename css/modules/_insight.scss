@@ -1,0 +1,38 @@
+.insight {
+    padding: 5rem 15px 3.333rem 15px;
+    position: relative;
+    z-index: 3;
+    @include atSmall {
+        padding: 3.75rem 15px 2.5rem 15px;
+    }
+    &__copy {
+        padding: 0;
+        margin-top: 3rem;
+        @include atSmall {
+            margin-top: 0;
+        }
+    }
+    &__title {
+        font-family: $main-smb;
+        color: $brand;
+        font-size: 1.9167rem;
+        line-height: 2.5rem;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+        @include atSmall {
+            font-size: 1.4375rem;
+            line-height: 1.875rem;
+            margin-bottom: 1.875rem;
+        }
+    }
+    &__text {
+        color: $text;
+        font-size: 1.667rem;
+        line-height: 2.333rem;
+        font-family: $main-reg;
+        @include atSmall {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+.interfaz {
+    &__img {
+        max-width: 100%;
+        display: block;
+        margin: 2.5rem auto 0 auto;
+        @include atSmall {
+            margin: 1.875rem auto 0 auto;
+        }
+    }
+    &__beneficios {
+        margin-top: 1.667rem;
+        @include atSmall {
+            margin-top: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &-img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto 2rem auto;
+            @include atSmall {
+                margin: 0;
+            }
+        }
+        &-list {
+            &__item{
+                text-align: center;
+                @include atSmall {
+                    text-align: left;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                & + & {
+                    margin-top: 5rem;
+                    @include atSmall {
+                        margin-top: 3.75rem;
+                    }
+                }
+                &-divider {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 2rem auto 1.5rem auto;
+                    @include atSmall {
+                        margin: 0;
+                    }
+                    &__dot {
+                        border-radius: 50%;
+                        background-color: $brand;
+                        height: 5px;
+                        width: 5px;
+                        & + & {
+                            margin-left: 3px;
+                        }
+                    }
+                }
+                &-text {
+                    font-family: $main-lgt;
+                    color: $black;
+                    font-size: 1.5rem;
+                    line-height: 2.0833rem;
+                    width: 70%;
+                    margin: 0 auto;
+                    @include atSmall {
+                        font-size: 1.125rem;
+                        line-height: 1.5625rem;
+                        margin: 0;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

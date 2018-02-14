@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 6.667rem;
+    @include atSmall {
+        margin-bottom: 5rem;
+    }
+    &__logo {
+        width: 60%;
+        max-width: 220px;
+        display: block;
+        &-img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__btn {
+        cursor: pointer;
+        &-line {
+            width: 3.333rem;
+            height: 4px;
+            background-color: $black;
+            border-radius: 2px;
+            @include atSmall {
+                width: 2.5rem;
+            }
+            & + & {
+                margin-top: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.subheader {
+    padding: 1.667rem 0 4.167rem 0;
+    @include atSmall {
+        padding: 1.25rem 0 3.125rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__contact {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        &-item {
+            & + & {
+                margin-left: 2.1875rem;
+            }
+            &__icon {
+                margin-right: 1rem;
+            }
+            &__link {
+                font-family: $alt;
+                font-weight: 300;
+                font-size: 1.167rem;
+                line-height: 1.5rem;
+                @include linkStates($black, none);
+                @include atSmall {
+                    font-size: 0.875rem;
+                    line-height: 1.125rem;
+                }
+            }
+        }
+    }
+    &__social {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 1rem;
+        @include atSmall {
+            margin-top: 0;
+            justify-content: flex-end;
+        }
+        &-item {
+            & + & {
+                margin-left: 1rem;
+            }
+        }
+        &-link {
+            font-size: 1.333rem;
+            @include linkStates($black, none);
+        }
+    }
+}

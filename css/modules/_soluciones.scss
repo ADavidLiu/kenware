@@ -1,0 +1,35 @@
+.soluciones {
+    &__list {
+        @include atSmall {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+    &__item {
+        text-align: center;
+        padding-left: 13px;
+        @include atSmall {
+            width: 20%;
+        }
+        & + & {
+            margin-top: 1.333rem;
+            @include atSmall {
+                margin-top: 0;
+            }
+        }
+        &--main {
+            margin-bottom: 1.333rem;
+            padding-left: 0;
+            width: auto;
+            @include atSmall {
+                margin-bottom: 1rem;
+            }
+        }
+        &-label {
+            font-family: $main-lgt;
+            color: $brand;
+            margin: 10px auto;
+        }
+    }
+}

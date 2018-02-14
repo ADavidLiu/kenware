@@ -1,0 +1,33 @@
+.factelect {
+    &__beneficios {
+        &-img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto 2rem auto;
+        }
+        &-group {
+            @include atSmall {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+            & + & {
+                margin-top: 2.0833rem;
+                @include atSmall {
+                    margin-top: 1.5625rem;
+                }
+            }
+        }
+        &-list {
+            &__item {
+                & + & {
+                    margin-top: 2.0833rem;
+                    @include atSmall {
+                        margin-top: 0;
+                        margin-left: 1.5625rem;
+                    }
+                }
+            }
+        }
+    }
+}

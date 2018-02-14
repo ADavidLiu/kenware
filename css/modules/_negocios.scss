@@ -1,0 +1,64 @@
+.negocios {
+    padding-bottom: 7.5rem;
+    @include atSmall {
+        padding-bottom: 5.625rem;
+    }
+    &__list {
+        @include atSmall {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+        }
+        & + & {
+            margin-top: 1.667rem;
+            @include atSmall {
+                margin-top: 1.25rem;
+            }
+        }
+        &:last-child {
+            @include atSmall {
+                justify-content: center;
+            }
+            .negocios__item {
+                @include atSmall {
+                    width: calc(25% - 1rem);
+                }
+            }
+        }
+    }
+    &__item {
+        text-align: center;
+        border: 2px solid $border;
+        padding: 1.333rem;
+        border-radius: 5px;
+        @include atSmall {
+            width: 25%;
+            padding: 1rem;
+        }
+        & + & {
+            margin-top: 1.667rem;
+            @include atSmall {
+                margin-top: 0;
+                margin-left: 1.25rem;
+            }
+        }
+        &-img {
+            text-align: center;
+            height: 2.5rem;
+            width: auto;
+            @include atSmall {
+                height: 1.875rem;
+            }
+        }
+        &-label {
+            margin-top: 0.8333rem;
+            font-family: $main-lgt;
+            color: $text-light;
+            font-size: 1.4167rem;
+            @include atSmall {
+                margin-top: 0.625rem;
+                font-size: 1.0625rem;
+            }
+        }
+    }
+}

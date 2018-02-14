@@ -1,0 +1,41 @@
+.callout {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 20rem 0;
+    text-align: center;
+    @include atSmall {
+        padding: 18rem 0;
+    }
+    &__title {
+        font-family: $main-reg;
+        color: $brand;
+        font-size: 2.167rem;
+        line-height: 2.5rem;
+        @include atSmall {
+            font-size: 1.625rem;
+            line-height: 1.875rem;
+        }
+        &--margin {
+            margin-bottom: 1.333rem;
+            @include atSmall {
+                margin-bottom: 1rem;
+            }
+        }
+        &--white {
+            color: $white;
+        }
+    }
+    &__text {
+        font-family: $main-lgt;
+        color: $text-light;
+        font-size: 1.5rem;
+        line-height: 1.667rem;
+        padding: 1.333rem 0 1.667rem 0;
+        @include atSmall {
+            font-size: 1.125rem;
+            line-height: 1.25rem;
+            padding: 1rem 0 1.25rem 0;
+        }
+    }
+}

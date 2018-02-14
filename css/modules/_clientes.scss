@@ -1,0 +1,49 @@
+.clientes {
+    padding-top: 7.5rem;
+    @include atSmall {
+        padding-top: 5.625rem;
+    }
+    &__list {
+        margin-top: 2.9167rem;
+        @include atSmall {
+            margin-top: 2.1875rem;
+        }
+    }
+    &__row {
+        @include atSmall {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        & + & {
+            margin-top: 2.5rem;
+            @include atSmall {
+                margin-top: 1.875rem;
+            }
+        }
+        &:last-child {
+            .clientes__item-wrapper {
+                @include atSmall {
+                    width: 50%;
+                }
+            }
+        }
+    }
+    &__item-wrapper {
+        width: 100%;
+        text-align: center;
+        @include atSmall {
+            width: 33.33%;
+        }
+        & + & {
+            margin-top: 2.5rem;
+            @include atSmall {
+                margin-top: 0;
+            }
+        }
+    }
+    &__item {
+        display: block;
+        margin: 0 auto;
+    }
+}

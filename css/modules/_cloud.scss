@@ -1,0 +1,83 @@
+.cloud {
+    &__img {
+        max-width: 100%;
+        display: block;
+        margin: 2.5rem auto 0 auto;
+        @include atSmall {
+            margin: 1.875rem auto 0 auto;
+        }
+    }
+    &__beneficios {
+        margin-top: 1.667rem;
+        @include atSmall {
+            margin-top: 1.25rem;
+        }
+        &-img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto 2rem auto;
+        }
+        &-list {
+            &__group {
+                @include atSmall {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                }
+                & + & {
+                    margin-top: 3.333rem;
+                    @include atSmall {
+                        margin-top: 2.5rem;
+                    }
+                }
+            }
+            &__item {
+                text-align: center;
+                @include atSmall {
+                    text-align: left;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 50%;
+                }
+                & + & {
+                    margin-top: 3.333rem;
+                    @include atSmall {
+                        margin-top: 0;
+                    }
+                }
+                &-icon-wrapper {
+                    height: 5rem;
+                    width: 5rem;
+                    border-radius: 50%;
+                    border: 4px dotted $brand;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 1.667rem;
+                    margin: 0 auto 1rem auto;
+                    @include atSmall {
+                        height: 4rem;
+                        width: 4rem;
+                        margin-right: 1.25rem;
+                        margin: 0 1.25rem 0 0;
+                    }
+                }
+                &-text {
+                    font-family: $main-lgt;
+                    color: $black;
+                    font-size: 1.5rem;
+                    line-height: 2.0833rem;
+                    width: 70%;
+                    margin: 0 auto;
+                    @include atSmall {
+                        font-size: 1.125rem;
+                        line-height: 1.5625rem;
+                        margin: 0;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

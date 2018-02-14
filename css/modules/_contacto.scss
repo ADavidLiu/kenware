@@ -1,0 +1,211 @@
+.contacto {
+    &__form {
+        margin-top: 2.9167rem;
+        padding: 0;
+        @include atSmall {
+            margin-top: 2.1875rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        &-column {
+            @include atSmall {
+                width: 50%;
+            }
+            &--full {
+                width: 100%;
+                @include atSmall {
+                    margin-left: 0 !important;
+                    margin-top: 5px !important;
+                }
+            }
+            &+& {
+                margin-top: 1.667rem;
+                @include atSmall {
+                    margin-top: 0;
+                }
+            }
+            &:nth-child(2) {
+                .contacto__form-label {
+                    @include atSmall {
+                        padding-left: 0.625rem;
+                    }
+                }
+                .contacto__form-input {
+                    @include atSmall {
+                        margin-left: auto;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        &-group {
+            &+& {
+                margin-top: 5px;
+            }
+        }
+        &-label {
+            font-family: $main-lgt;
+            font-size: 1.0833rem;
+            line-height: 2rem;
+            color: $text-light;
+            margin-bottom: 3px;
+            @include atSmall {
+                font-size: 0.8125rem;
+                line-height: 1.5rem;
+            }
+            &--small {
+                font-size: 0.9167rem;
+                @include atSmall {
+                    font-size: 0.6875rem;
+                }
+            }
+            &--link {
+                @include linkStates($brand, none);
+            }
+            &--brand {
+                color: $brand;
+            }
+        }
+        &-input {
+            display: block;
+            width: 100%;
+            border-radius: 50px;
+            height: 2.9167rem;
+            border: 2px solid $text-light;
+            padding: 0 1rem;
+            font-family: $main-reg;
+            color: $text-light;
+            font-size: 1rem;
+            @include atSmall {
+                height: 2.1875rem;
+                width: calc(100% - 0.625rem);
+            }
+            &--textarea {
+                height: 7.5rem;
+                border-radius: 15px;
+                resize: none;
+                padding: 1rem;
+                width: 100%;
+                @include atSmall {
+                    height: 6.5rem;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+            &--btn {
+                background-color: $brand;
+                border: 0;
+                color: $white;
+                width: 50%;
+                max-width: 140px;
+                text-transform: uppercase;
+            }
+        }
+        &-dropdown-wrapper {
+            position: relative;
+        }
+        &-dropdown {
+            line-height: 2.9167rem !important;
+            color: $brand;
+            cursor: pointer;
+            @include atSmall {
+                line-height: 2.1875rem !important;
+            }
+            &__list {
+                position: absolute;
+                z-index: 2;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+                display: none;
+                @include atSmall {
+                    left: auto;
+                    right: 0;
+                    width: calc(100% - 0.625rem);
+                }
+                &-item {
+                    background-color: $text-light;
+                    color: $white;
+                    font-size: 1.08333rem;
+                    line-height: 2rem;
+                    font-family: $main-lgt;
+                    padding: 5px 1.667rem;
+                    cursor: pointer;
+                    transition: all .25s;
+                    @include atSmall {
+                        font-size: 0.8125rem;
+                        line-height: 1.5rem;
+                        padding: 5px 1.25rem;
+                    }
+                    &--active {
+                        background-color: $brand;
+                    }
+                    & + & {
+                        border-top: 2px solid $border-dark;
+                    }
+                    &:first-child {
+                        border-top-left-radius: 20px;
+                        border-top-right-radius: 20px;
+                        @include atSmall {
+                            border-top-left-radius: 16px;
+                            border-top-right-radius: 16px;
+                        }
+                    }
+                    &:last-child {
+                        border-bottom-left-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        @include atSmall {
+                            border-bottom-left-radius: 16px;
+                            border-bottom-right-radius: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__checks {
+        margin: 0.8333rem 0 1.667rem 0;
+        @include atSmall {
+            margin: 0.625rem 0 1.25rem 0;
+        }
+        &-item {
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            &--active {
+                .contacto__checks-item__tick {
+                    position: relative;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 90%;
+                        background-image: url("../images/check.png");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                    }
+                }
+            }
+            &__tick {
+                min-height: 10px;
+                min-width: 10px;
+                border: 1px solid $text-light;
+                margin-right: 0.5rem;
+            }
+            .contacto__form-label {
+                line-height: 1.333rem;
+                @include atSmall {
+                    line-height: 1rem;
+                }
+            }
+        }
+    }
+}

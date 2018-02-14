@@ -1,0 +1,221 @@
+/*------------- UTILITY CLASSES -------------*/
+
+@mixin atSmall {
+    @media screen and (min-width: 768px) {
+        @content
+    }
+}
+
+@mixin atMedium {
+    @media screen and (min-width: 992px) {
+        @content
+    }
+}
+
+@mixin atLarge {
+    @media screen and (min-width: 1200px) {
+        @content
+    }
+}
+
+@mixin atExtralarge {
+    @media screen and (min-width: 1400px) {
+        @content
+    }
+}
+
+@mixin linkStates($color, $decoration) {
+    &:link,
+    &:hover,
+    &:focus,
+    &:visited {
+        color: $color;
+        text-decoration: $decoration;
+    }
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cta {
+    background-color: $brand;
+    display: inline-block;
+    text-align: center;
+    height: 2.9167rem;
+    line-height: 2.9167rem;
+    min-width: 140px;
+    padding: 0 2.5rem;
+    color: $white;
+    font-family: $main-lgt;
+    font-size: 1.0833rem;
+    text-transform: uppercase;
+    border-radius: 50px;
+    @include linkStates($white, none);
+    @include atSmall {
+        height: 2.1875rem;
+        line-height: 2.1875rem;
+        padding: 0 1.875rem;
+        font-size: 0.8125rem;
+    }
+    &--outline {
+        border: 2px solid $brand;
+        background-color: transparent;
+        @include linkStates($black, none);
+        &-white {
+            border-color: $white;
+        }
+    }
+    &--white {
+        @include linkStates($white, none);
+    }
+    &--med {
+        @include atSmall {
+            width: 50%;
+        }
+    }
+}
+
+.section {
+    padding-bottom: 3.75rem;
+    @include atSmall {
+        padding-bottom: 2.8125rem;
+    }
+    &--angle {
+        position: relative;
+        &:before {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10rem 100vw 0 0;
+            border-color: $white transparent transparent transparent;
+            @include atSmall {
+                border-width: 15rem 100vw 0 0;
+            }
+        }
+        &:after {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 10rem 100vw;
+            border-color: transparent transparent $white transparent;
+            @include atSmall {
+                border-width: 0 0 15rem 100vw;
+            }
+        }
+    }
+    &__intro {
+        padding: 3.75rem 0 0 0;
+        text-align: center;
+        @include atSmall {
+            padding: 2.8125rem 0 0 0;
+        }
+        &-title {
+            font-family: $main-smb;
+            color: $text;
+            font-size: 2.167rem;
+            text-transform: uppercase;
+            @include atSmall {
+                font-size: 1.625rem;
+            }
+            &--single {
+                margin-bottom: 3.333rem;
+                @include atSmall {
+                    margin-bottom: 2.5rem;
+                }
+            }
+            &--big {
+                font-size: 2.167rem;
+                @include atSmall {
+                    font-size: 1.625rem;
+                }
+            }
+            &--center {
+                text-align: center;
+            }
+            &--dark {
+                color: $black;
+            }
+            &--brand {
+                color: $brand;
+            }
+        }
+        &-text {
+            color: $text;
+            font-size: 1.667rem;
+            line-height: 2.333rem;
+            margin: 3.333rem auto;
+            font-family: $main-reg;
+            @include atSmall {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+                margin: 2.5rem auto;
+            }
+            &--brand {
+                color: $brand;
+            }
+            &--alt {
+                margin-top: 1rem;
+                @include atSmall {
+                    margin-top: 0.75rem;
+                }
+            }
+        }
+    }
+}
+
+.info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    @include atSmall {
+        width: 50%;
+    }
+    &-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(150%);
+        margin-right: 3.333rem;
+        @include atSmall {
+            margin-right: 2.5rem;
+        }
+        &__dot {
+            border-radius: 50%;
+            background-color: $black;
+            height: 5px;
+            width: 5px;
+            & + & {
+                margin-left: 3px;
+            }
+        }
+    }
+    &-text {
+        font-family: $main-lgt;
+        font-size: 1.5rem;
+        line-height: 2.0833rem;
+        color: $brand;
+        text-align: left;
+        @include atSmall {
+            font-size: 1.125rem;
+            line-height: 1.5625rem;
+        }
+        &--dark {
+            color: $black;
+        }
+    }
+}
